@@ -50,10 +50,6 @@ cascade Realizar operações em cascata só faz sentido em relacionamentos Pai -
 
 mappedBy Indica qual é o lado inverso ou não dominante da relação.
 
-# 🔗 Links Úteis
-Spring Initializr
-Common application properties
-Spring Data JPA - Reference Documentation
-Validation Reference Implementation: Reference Guide
+
 
 
