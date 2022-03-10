@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,10 +29,6 @@ public class AvaliacaoFisica {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name="aluno_id")
-  private Aluno aluno;
-
   private LocalDateTime dataDaAvaliacao = LocalDateTime.now();
 
   @Column(name = "peso_atual")
@@ -38,6 +36,11 @@ public class AvaliacaoFisica {
 
   @Column(name = "altura_atual")
   private double altura;
+  
+  @ManyToOne
+  @JoinColumn(name="aluno_id")
+  @JsonIgnoreProperties({"avaliacoes"})
+  private Aluno aluno;
 
 public Long getId() {
 	return id;

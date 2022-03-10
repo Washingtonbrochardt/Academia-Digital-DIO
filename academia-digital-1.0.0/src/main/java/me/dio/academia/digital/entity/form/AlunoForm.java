@@ -7,10 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-@NoArgsConstructor
-@AllArgsConstructor
 public class AlunoForm {
 
   private String nome;
